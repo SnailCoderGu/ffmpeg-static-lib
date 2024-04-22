@@ -37,6 +37,7 @@ echo ${basepath}
 cd ${basepath}
 
 ./configure --prefix=${basepath}/ffmpeg_install --disable-static --enable-shared  --disable-asm --enable-debug=3 --toolchain=msvc
+make -j4
 make install
 ```
 
