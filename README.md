@@ -65,3 +65,13 @@ make: *** [ffbuild/common.mak:60: libavformat/adtsenc.o] Error 1
 1. 将include 加入c++头文件目录
 2. 将bin目录下 .lib 文件加入链接库目录
 3. 将bin目录下 .dll 目录拷贝到exe运行目录
+4. 在编写helloword的时候，引入头文件的方式
+```
+extern "C" {
+    #include <libavutil/avutil.h>
+    #include <libavcodec/avcodec.h>
+    #include <libavformat/avformat.h>
+    #include <libswresample/swresample.h>
+}
+```
+不然在cpp里面会报找不到符号
